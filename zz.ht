@@ -1,0 +1,54 @@
+  /* Button Styles */
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    text-decoration: none;
+  }
+  
+  /* Hero Button Specific Styles */
+  .hero .btn {
+    animation: pulse 2s infinite;
+  }
+  
+  .hero .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Keep pulse animation during hover */
+    animation: pulse 2s infinite;
+  }
+  
+  /* Button Click Effect */
+  .btn.clicked {
+    animation: fadeOut 0.5s forwards;
+    pointer-events: none;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-3px);
+    }
+  }
